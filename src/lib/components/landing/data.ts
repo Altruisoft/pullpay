@@ -28,20 +28,20 @@ export const navLinks: LinkItem[] = [
 
 // ─── Problem Section ───
 export const problemData = {
-	title: 'Manual Payment Coordination Discourages Participation',
+	title: 'Traditional Rails Bleed Open Source.',
 	description:
-		'Stellar ecosystem projects can distribute grants and hackathon prizes, but there is no reusable infrastructure for rewarding small, verifiable GitHub contributions.',
+		'Stellar ecosystem projects distribute grants, but micro-rewards for verifiable GitHub contributions are choked by manual coordination and legacy payment rails.',
 	paragraphs: [
-		'Today, if a maintainer wants to reward a contributor for a bug fix, they have to ask for a wallet address on Discord, calculate exchange rates, and send a manual transaction. This creates friction that accelerates maintainer burnout and discourages recurring participation.',
-		'Traditional payment rails fail for small, global contributor rewards — and other blockchains suffer from high gas fees that make micro-rewards economically impossible.'
+		'Today, rewarding a bug fix means asking for an address on Discord, calculating exchange rates, and sending manual transactions. This friction destroys recurring participation.',
+		'Traditional rails fail at micro-settlement. Other blockchains fail at transaction costs. Open source needs a deterministic, low-fee settlement layer.'
 	]
 };
 
 export const traditionalRails: RailComparison[] = [
-	{ name: 'Stripe', limitation: '2.9% + $0.30 — a $5 reward loses 36%' },
-	{ name: 'PayPal', limitation: 'Frequent account freezes. Restricted in many countries.' },
-	{ name: 'Bank Transfer', limitation: '$15–$45 per international transfer. 3–5 day settlement.' },
-	{ name: 'Ethereum', limitation: 'Gas fees exceed $15. Micro-rewards are impossible.' }
+	{ name: 'Stripe', limitation: '2.9% + $0.30 fee — 36% erosion on a $5 reward.' },
+	{ name: 'PayPal', limitation: 'Account freezes. Geographically restricted.' },
+	{ name: 'Bank Wire', limitation: '$15–$45 overhead. 3–5 day settlement delay.' },
+	{ name: 'Ethereum', limitation: '$15+ gas fees. Micro-rewards are economically dead.' }
 ];
 
 // ─── How It Works ───

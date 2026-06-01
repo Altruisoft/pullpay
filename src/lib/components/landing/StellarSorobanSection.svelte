@@ -56,11 +56,6 @@
 </script>
 
 <section id="stellar-soroban" class="border-crx-border-subtle bg-crx-panel relative border-b">
-	<div class="pointer-events-none absolute inset-0 overflow-hidden">
-		<div
-			class="bg-crx-orange/4 absolute top-10 -right-24 h-96 w-96 rounded-full blur-[120px]"
-		></div>
-	</div>
 	<div class="mx-auto min-h-screen max-w-[1280px] px-6 py-20 lg:px-10">
 		<div class="mb-14 max-w-2xl space-y-5" use:reveal={{ y: 24 }}>
 			<p class="text-crx-gray-500 text-xs font-medium tracking-[0.2em] uppercase">

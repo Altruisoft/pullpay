@@ -6,11 +6,6 @@
 </script>
 
 <section id="how-it-works" class="border-crx-border-subtle bg-crx-page relative border-b">
-	<div class="pointer-events-none absolute inset-0 overflow-hidden">
-		<div
-			class="bg-crx-orange/5 absolute top-1/3 -left-24 h-80 w-80 rounded-full blur-[100px]"
-		></div>
-	</div>
 	<div class="mx-auto min-h-screen max-w-[1280px] px-6 py-20 lg:px-10">
 		<div class="grid min-h-[calc(100vh-10rem)] gap-14 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
 			<div class="space-y-7" use:reveal={{ y: 24 }}>

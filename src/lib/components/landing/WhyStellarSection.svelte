@@ -23,30 +23,23 @@
 				</p>
 			</div>
 
-			<div class="space-y-4" use:reveal={{ delay: 0.1, y: 24 }}>
+			<div class="space-y-0" use:reveal={{ delay: 0.1, y: 24 }}>
 				{#each features as feat, index (index)}
 					<div
-						class="border-crx-border-subtle bg-crx-panel group rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+						class="border-crx-border-subtle bg-crx-panel group border-b p-6 transition-colors duration-300 hover:bg-white first:border-t"
 						use:reveal={{ delay: 0.06 + index * 0.06, y: 16 }}
 					>
-						<div class="flex items-start gap-4">
+						<div class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6">
 							<div
-								class="mt-1 flex size-8 shrink-0 items-center justify-center rounded-lg bg-crx-orange/10 text-crx-orange transition-colors group-hover:bg-crx-orange group-hover:text-white"
+								class="text-crx-gray-400 font-mono text-sm font-semibold transition-colors group-hover:text-crx-orange w-12"
 							>
-								<svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2.5"
-										d="M5 13l4 4L19 7"
-									/>
-								</svg>
+								[{String(index + 1).padStart(2, '0')}]
 							</div>
-							<div>
-								<h3 class="text-crx-black text-base font-semibold tracking-tight">
+							<div class="flex-1 grid sm:grid-cols-[1fr_1.5fr] gap-2 sm:gap-8">
+								<h3 class="text-crx-black text-lg font-medium tracking-tight">
 									{feat.feature}
 								</h3>
-								<p class="text-crx-gray-700 mt-2 text-sm leading-6">
+								<p class="text-crx-gray-600 text-sm leading-6">
 									{feat.enables}
 								</p>
 							</div>

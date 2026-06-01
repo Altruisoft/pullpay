@@ -11,17 +11,14 @@
      HERO SECTION — exactly 1 viewport on desktop
      ═══════════════════════════════════════════ -->
 <section id="top" class="hero-section bg-crx-page relative overflow-hidden">
-	<!-- ─── Background Video (Desktop) ─── -->
+	<!-- ─── Background Image (Desktop) ─── -->
 	<div class="absolute inset-0 z-0 max-lg:hidden">
-		<video
+		<img
 			use:parallax={{ from: -6, to: 6 }}
-			src="/women-landing.webm"
-			autoplay
-			muted
-			loop
-			playsinline
-			class="hero-video absolute top-0 right-0 h-full w-[75%] object-cover object-[center_20%]"
-		></video>
+			src="/images/hero-pullpay.png"
+			alt="Developer merging a pull request and receiving USDC payment"
+			class="hero-bg absolute top-0 right-0 h-full w-[75%] object-cover object-[center_20%]"
+		/>
 	</div>
 
 	<!-- ─── Content ─── -->
@@ -350,8 +347,8 @@
 		}
 	}
 
-	/* Seamless video blend using CSS mask — no overlay artifacts */
-	.hero-video {
+	/* Seamless image blend using CSS mask — no overlay artifacts */
+	.hero-bg {
 		-webkit-mask-image:
 			linear-gradient(
 				to right,

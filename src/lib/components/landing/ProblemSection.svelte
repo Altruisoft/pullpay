@@ -32,13 +32,11 @@
 					{/each}
 				</div>
 
-				<div class="grid gap-4 sm:grid-cols-2">
+				<div class="border-crx-border-subtle divide-crx-border-subtle flex flex-col divide-y border-y">
 					{#each rails as rail, index (index)}
-						<div
-							class="border-crx-border-subtle bg-crx-page rounded-2xl border border-l-2 border-l-crx-gray-300 p-6"
-						>
-							<h3 class="text-crx-black text-base font-semibold">{rail.name}</h3>
-							<p class="text-crx-gray-700 mt-2 text-sm leading-6">{rail.limitation}</p>
+						<div class="grid grid-cols-[100px_1fr] items-center gap-4 py-4 sm:grid-cols-[140px_1fr]">
+							<h3 class="text-crx-black text-sm font-bold uppercase tracking-wider">{rail.name}</h3>
+							<p class="text-crx-gray-600 text-sm font-medium">{rail.limitation}</p>
 						</div>
 					{/each}
 				</div>

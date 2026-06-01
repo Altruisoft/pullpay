@@ -20,17 +20,18 @@
 			</p>
 		</div>
 
-		<div class="grid gap-4 sm:grid-cols-2">
+		<div class="border-crx-border-subtle divide-crx-border-subtle flex flex-col divide-y border-y">
 			{#each cases as useCase, index (index)}
 				<article
-					class="border-crx-border-subtle bg-crx-page rounded-2xl border p-6 transition-shadow duration-200 hover:shadow-lg sm:p-8"
+					class="group grid gap-4 py-8 transition-colors duration-300 hover:bg-white/50 sm:grid-cols-[1fr_2fr]"
 					use:reveal={{ delay: 0.06 + index * 0.06, y: 20 }}
 				>
-					<div class="mb-5 h-0.5 w-8 bg-[#0FA8F1]"></div>
-					<h3 class="text-crx-black text-lg leading-tight font-semibold tracking-[-0.02em]">
+					<h3 class="text-crx-black text-xl font-medium tracking-tight">
 						{useCase.title}
 					</h3>
-					<p class="text-crx-gray-700 mt-3 text-sm leading-6">{useCase.example}</p>
+					<p class="text-crx-gray-600 max-w-xl text-base leading-7 group-hover:text-crx-gray-900 transition-colors">
+						{useCase.example}
+					</p>
 				</article>
 			{/each}
 		</div>
