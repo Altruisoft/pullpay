@@ -1,0 +1,162 @@
+# PullPay - Landing Page Content Brief
+
+> Internal reference document for landing page development.
+> All data sourced from the official SCF Instaward SOW (`pullpay-instaward-doc.md`).
+> Use this as the canonical reference for copywriting, page structure, and information hierarchy.
+
+---
+
+## PRODUCT IDENTITY
+
+**Product Name:** PullPay
+
+**Primary Tagline:** Automated Contributor Rewards on Stellar
+
+**One-Line GTM:** Convert GitHub contributions into measurable on-chain Stellar activity through automated Soroban-based USDC settlements.
+
+**Positioning:** PullPay is a reusable piece of public ecosystem infrastructure that enables open-source maintainers to automate USDC payouts to contributors simply by merging a Pull Request.
+
+---
+
+## SECTION 1 - HERO
+
+### Primary Headline (Options)
+
+**Option A - Developer-driven:**
+> Merge the PR. Payment is Automatic.
+> GitHub-to-Soroban reward infrastructure for the Stellar ecosystem.
+
+**Option B - Maintainer-driven:**
+> Stop Coordinating Payouts Manually.
+> Automate USDC contributor rewards directly from your GitHub workflow.
+
+### Sub-headline
+
+PullPay enables Stellar ecosystem projects to compensate contributors without manual payment coordination. Funds are secured in a Soroban escrow contract and released automatically the moment a Pull Request is verified and merged.
+
+### CTA
+
+* **[Create a Reward]** - Primary CTA (for Maintainers)
+* **[Claim a Reward]** - Secondary CTA (for Contributors)
+
+---
+
+## SECTION 2 - PROBLEM STATEMENT
+
+### Section Headline
+
+**"Manual Payment Coordination Discourages Participation"**
+
+### Body
+
+Stellar ecosystem projects can distribute grants and hackathon prizes, but there is no reusable infrastructure for rewarding small, verifiable GitHub contributions — bug fixes, documentation, translations, SDK enhancements. As a result, contributor rewards are coordinated manually (via Discord, spreadsheets, or direct messages), creating friction that discourages recurring participation.
+
+Furthermore, traditional payment rails fail for small, global contributor rewards:
+
+| Alternative | Key Limitation |
+|---|---|
+| **Stripe** | 2.9% + $0.30 — a $5 reward loses 36%. Not universally available. |
+| **PayPal** | Frequent account freezes. Restricted in many developing nations. |
+| **Bank Transfer** | $15–$45 per international transfer. 3–5 day settlement. |
+| **Ethereum** | Gas fees exceed $15. Micro-rewards are economically impossible. |
+
+**The Solution:** Stellar enables economically viable micro-rewards due to its low transaction costs and fast settlement.
+
+---
+
+## SECTION 3 - HOW IT WORKS
+
+### Section Headline
+
+**"Three Steps. One File. Verifiable Settlement."**
+
+### Maintainer Flow
+1. **Create Reward** - The maintainer creates a USDC reward linked to a GitHub Issue via the PullPay interface.
+2. **Add Workflow** - The maintainer adds a single `pullpay.yml` GitHub workflow file to their repository.
+3. **Merge PR** - When a contributor submits a PR, the maintainer reviews and merges it. The GitHub Action triggers the Cloudflare validation layer, which then tells the Soroban contract to release the funds.
+
+### Contributor Flow
+1. **Claim Reward** - The contributor connects their Freighter wallet on the PullPay interface and registers their PR link.
+2. **Get Paid** - Upon successful merge, the USDC is automatically deposited into their Stellar wallet.
+
+---
+
+## SECTION 4 - WHY STELLAR
+
+### Section Headline
+
+**"Why Stellar Makes This Possible"**
+
+### Body
+
+| Stellar Feature | What It Enables |
+|---|---|
+| **Near-zero fees (<$0.01)** | $5 micro-rewards remain $5. No fee erosion. |
+| **Native USDC** | Stable, real-world value. No volatile tokens. |
+| **Soroban smart contracts** | Programmable escrow — funds locked upfront, released on merge, refunded on timeout. |
+| **Sub-5-second finality** | The moment a PR is merged, USDC arrives in the contributor's wallet. |
+| **Permissionless & global** | Removes geographic barriers common in traditional payment systems. |
+
+---
+
+## SECTION 5 - ARCHITECTURE & SECURITY
+
+### Section Headline
+
+**"Trust-Minimized Settlement Infrastructure"**
+
+### Body
+
+PullPay relies on three core components:
+1. **Soroban Reward Escrow Contract:** Locks USDC upfront so contributors trust the reward exists, and handles automated releases and timeout refunds.
+2. **GitHub Reward Automation Toolkit:** A reusable `pullpay.yml` workflow and a Cloudflare Worker.
+3. **Validation Layer Security:** Settlement requests are authenticated through GitHub workflow executions and independently verified against live GitHub API data before triggering Soroban settlement. The worker acts solely as a verification layer and does not hold custody of funds.
+
+### Validation Scope
+
+PullPay validates only:
+- Repository association (the PR belongs to the correct repo)
+- Pull request existence (the PR is real)
+- Pull request merged status (the PR was merged, not just closed)
+
+PullPay does **not** evaluate code quality, contribution value, or contributor intent. Maintainers decide what to merge; PullPay automates the payment.
+
+---
+
+## SECTION 6 - USE CASES
+
+| Use Case | Example |
+|---|---|
+| **SDK bug fixes** | Stellar SDK maintainer posts $20 reward for a bug fix. Contributor submits PR. On merge, $20 USDC is released automatically. |
+| **Documentation rewards** | Community program offers $5–$10 for documentation improvements. Only viable because Stellar fees are <$0.01. |
+| **Hackathon follow-ups** | Organizer pre-funds rewards via Soroban escrow. Winners are paid automatically when their code is merged. |
+| **Ambassador campaigns** | Chapter leads run transparent bounty campaigns with verifiable on-chain settlement. |
+
+---
+
+## SECTION 7 - ECOSYSTEM IMPACT
+
+Every successful reward settlement creates:
+- A funded Stellar wallet (new ecosystem user)
+- A USDC transaction on Stellar (on-chain activity)
+- A Soroban contract interaction (smart contract usage)
+- A contributor exposed to the Stellar ecosystem (developer acquisition)
+
+---
+
+## SECTION 8 - DEVELOPER / COPYWRITER REFERENCE
+
+### Terminology - Strict Consistency Rules
+
+| Term | Correct Usage | Avoid (BANNED TERMS) |
+| --- | --- | --- |
+| **Product Category** | Ecosystem infrastructure, Reward automation | "Startup", "Bounty marketplace" |
+| **Validation** | GitHub API verification, PR merge verification | "Quality checking", "Code review" |
+| **Security** | Trust-minimized, verification layer | "Fully decentralized", "Trustless" |
+| **Users** | Maintainer, Contributor | "Buyer", "Seller", "Customer" |
+
+### Tone and Voice
+
+* Professional, execution-oriented, and infrastructure-focused.
+* PullPay complements existing solutions (like Gitcoin or Algora) by providing a lightweight, GitHub-native workflow built around Soroban escrow.
+* Do not make sweeping competitive attacks or absolute claims (e.g., avoid saying "Stellar is the only network", say "Stellar enables economically viable micro-rewards").
