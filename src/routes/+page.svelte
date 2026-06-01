@@ -70,7 +70,6 @@
 	<HeroSection logoMark={assets.logoMark} />
 	<ProblemSection
 		title={problemData.title}
-		description={problemData.description}
 		paragraphs={problemData.paragraphs}
 		rails={traditionalRails}
 	/>
