@@ -39,7 +39,7 @@
 								class="text-crx-white max-w-[11ch] text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.95] font-medium tracking-tighter"
 								use:reveal={{ delay: 0.08, y: 20 }}
 							>
-								Automate Payouts on Merge.
+								Automate Payouts on Merge
 							</h2>
 						</div>
 

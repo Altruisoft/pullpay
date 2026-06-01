@@ -23,7 +23,7 @@
 	class={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled ? 'px-4 py-4 sm:px-6' : 'px-6 py-6 lg:px-12 lg:py-8'}`}
 >
 	<div
-		class={`mx-auto flex items-center justify-between transition-all duration-300 ${isScrolled ? 'max-w-[1180px] rounded-[1.75rem] bg-white/95 p-3 shadow-[0_24px_80px_rgba(0,0,0,0.08)] backdrop-blur-xl' : 'max-w-[1440px]'}`}
+		class={`mx-auto flex items-center justify-between transition-all duration-300 ${isScrolled ? 'max-w-[1180px] rounded-[1rem] bg-white/95 px-6 py-4 shadow-[0_24px_80px_rgba(0,0,0,0.08)] backdrop-blur-xl' : 'max-w-[1440px]'}`}
 	>
 		<!-- Logo -->
 		<a
@@ -37,7 +37,7 @@
 
 		<!-- Desktop Nav -->
 		<nav
-			class="text-crx-black hidden items-center gap-10 text-base font-medium lg:flex"
+			class="text-crx-black hidden items-center gap-10 text-base font-semibold lg:flex"
 			aria-label="Primary navigation"
 		>
 			{#each links as link, _i (_i)}

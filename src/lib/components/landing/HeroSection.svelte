@@ -29,14 +29,14 @@
 				<h1
 					class="text-crx-black text-[clamp(2.5rem,4.5vw,4.2rem)] leading-[1.05] font-medium tracking-[-0.04em]"
 				>
-					Merge the PR.<br />
-					<span class="text-[#0FA8F1]">Payment is automatic.</span>
+					Merge the PR<br />
+					<span class="text-[#0FA8F1]">Payment is automatic</span>
 				</h1>
 
 				<div class="mt-6 flex items-center gap-4">
 					<div class="h-px w-10 bg-[#0FA8F1]"></div>
 					<p class="text-crx-gray-500 text-base font-medium lg:text-lg">
-						Automated contributor rewards on Stellar.
+						Automated contributor rewards on Stellar
 					</p>
 				</div>
 

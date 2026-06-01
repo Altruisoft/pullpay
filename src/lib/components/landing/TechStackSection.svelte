@@ -9,7 +9,7 @@
 <section id="tech-stack" class="border-crx-border-subtle bg-crx-page border-b">
 	<div class="mx-auto max-w-[1280px] px-6 py-20 lg:px-10 lg:py-28">
 		<div class="mb-16 max-w-2xl space-y-5" use:reveal={{ y: 24 }}>
-			<p class="text-crx-gray-500 text-xs font-medium tracking-[0.2em] uppercase">Stellar Infrastructure</p>
+			<p class="text-crx-gray-500 text-sm font-medium tracking-[0.2em] uppercase">Stellar Infrastructure</p>
 			<h2
 				class="text-crx-black text-[clamp(2.4rem,5vw,4.5rem)] leading-[0.92] font-medium tracking-[-0.06em]"
 			>

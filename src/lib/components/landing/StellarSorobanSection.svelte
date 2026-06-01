@@ -58,13 +58,13 @@
 <section id="stellar-soroban" class="border-crx-border-subtle bg-crx-panel relative border-b">
 	<div class="mx-auto min-h-screen max-w-[1280px] px-6 py-20 lg:px-10">
 		<div class="mb-14 max-w-2xl space-y-5" use:reveal={{ y: 24 }}>
-			<p class="text-crx-gray-500 text-xs font-medium tracking-[0.2em] uppercase">
+			<p class="text-crx-gray-500 text-sm font-medium tracking-[0.2em] uppercase">
 				Stellar & Soroban
 			</p>
 			<h2
 				class="text-crx-black max-w-[10ch] text-[clamp(3.2rem,6vw,6.8rem)] leading-[0.9] font-medium tracking-[-0.07em]"
 			>
-				Fast rails. Clear rules.
+				Fast rails <br /> Clear rules
 			</h2>
 			<p class="text-crx-gray-700 max-w-84 text-sm leading-6">
 				Low fees. Contract release. Visible state.
@@ -189,7 +189,7 @@
 				<h3
 					class="text-crx-black mt-4 text-[clamp(2rem,3vw,2.5rem)] leading-[0.92] font-medium tracking-[-0.06em]"
 				>
-					Powered by SAC.
+					Powered by SAC
 				</h3>
 				<p class="text-crx-gray-700 mt-4 text-sm leading-6">
 					Stellar Asset Contract eliminates token wrapping. Direct USDC transfers cost a fraction of
@@ -289,7 +289,7 @@
 					<h3
 						class="text-crx-black mt-3 max-w-[9ch] text-[clamp(2rem,3vw,2.5rem)] leading-[0.92] font-medium tracking-[-0.06em]"
 					>
-						GitHub-native.
+						GitHub-native
 					</h3>
 				</div>
 			</div>
@@ -312,7 +312,7 @@
 					<h3
 						class="text-crx-black mt-3 text-[clamp(2rem,3vw,2.5rem)] leading-[0.92] font-medium tracking-[-0.06em]"
 					>
-						Low-fee<br />close.
+						Low-fee<br />close
 					</h3>
 					<p class="text-crx-gray-700 mt-3 text-sm leading-6">Micro-rewards made viable.</p>
 				</div>

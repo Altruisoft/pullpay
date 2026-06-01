@@ -12,10 +12,10 @@
 				<h2
 					class="text-crx-black max-w-[9ch] text-[clamp(3.4rem,6vw,6.8rem)] leading-[0.9] font-medium tracking-[-0.07em]"
 				>
-					Three steps. One file.
+					Three steps One file
 				</h2>
 				<p class="text-crx-gray-700 max-w-[18rem] text-sm leading-6">
-					Verifiable settlement from GitHub to Stellar.
+					Verifiable settlement from GitHub to Stellar
 				</p>
 			</div>
 			<div class="relative" use:reveal={{ delay: 0.1, y: 24 }}>
@@ -31,7 +31,9 @@
 							use:reveal={{ delay: 0.12 + index * 0.08, y: 20 }}
 						>
 							<div class="relative z-10 flex size-10 items-start justify-center pt-2">
-								<div class="size-2 rounded-full bg-crx-gray-300 ring-4 ring-crx-page transition-colors group-hover:bg-crx-orange"></div>
+								<div
+									class="size-2 rounded-full bg-crx-gray-300 ring-4 ring-crx-page transition-colors group-hover:bg-crx-orange"
+								></div>
 							</div>
 
 							<div class="border-crx-border-subtle border-b pb-10 last:border-b-0 last:pb-0">
@@ -41,8 +43,7 @@
 									>
 										{step.title}
 									</h3>
-									<span class="text-[#0FA8F1] text-sm tracking-[0.16em] uppercase"
-										>{step.role}</span
+									<span class="text-[#0FA8F1] text-sm tracking-[0.16em] uppercase">{step.role}</span
 									>
 								</div>
 								<p class="text-crx-gray-700 mt-4 max-w-lg text-sm leading-6">

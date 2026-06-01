@@ -8,15 +8,15 @@
 <section id="use-cases" class="border-crx-border-subtle bg-crx-panel border-b">
 	<div class="mx-auto max-w-[1280px] px-6 py-20 lg:px-10 lg:py-28">
 		<div class="mb-14 max-w-152 space-y-5" use:reveal={{ y: 24 }}>
-			<p class="text-crx-gray-500 text-xs font-medium tracking-[0.2em] uppercase">Use Cases</p>
+			<p class="text-crx-gray-500 text-sm font-medium tracking-[0.2em] uppercase">Use Cases</p>
 			<h2
 				class="text-crx-black text-[clamp(2.4rem,5vw,5rem)] leading-[0.92] font-medium tracking-[-0.06em]"
 			>
-				Built for the open-source economy.
+				Built for the open-source economy
 			</h2>
 			<p class="text-crx-gray-700 max-w-lg text-sm leading-6">
-				PullPay is designed for any scenario where small, verifiable contributions need to be rewarded
-				quickly and efficiently.
+				PullPay is designed for any scenario where small, verifiable contributions need to be
+				rewarded quickly and efficiently.
 			</p>
 		</div>
 
@@ -29,7 +29,9 @@
 					<h3 class="text-crx-black text-xl font-medium tracking-tight">
 						{useCase.title}
 					</h3>
-					<p class="text-crx-gray-600 max-w-xl text-base leading-7 group-hover:text-crx-gray-900 transition-colors">
+					<p
+						class="text-crx-gray-600 max-w-xl text-base leading-7 group-hover:text-crx-gray-900 transition-colors"
+					>
 						{useCase.example}
 					</p>
 				</article>

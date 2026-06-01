@@ -15,11 +15,11 @@
 	<div class="mx-auto max-w-[1280px] px-6 py-20 lg:px-10 lg:py-28">
 		<div class="grid gap-14 lg:grid-cols-[0.38fr_0.62fr]">
 			<div class="space-y-5 lg:sticky lg:top-28 lg:self-start" use:reveal={{ y: 24 }}>
-				<p class="text-crx-gray-500 text-xs font-medium tracking-[0.2em] uppercase">FAQ</p>
+				<p class="text-crx-gray-500 text-sm font-medium tracking-[0.2em] uppercase">FAQ</p>
 				<h2
 					class="text-crx-black text-[clamp(2.4rem,5vw,4.5rem)] leading-[0.92] font-medium tracking-[-0.06em]"
 				>
-					Common questions.
+					Common questions
 				</h2>
 				<p class="text-crx-gray-700 max-w-72 text-sm leading-6">
 					Everything you need to know about how PullPay works.

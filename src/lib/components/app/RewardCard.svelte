@@ -51,14 +51,14 @@
 			<div class="text-2xl font-bold tracking-tight text-crx-black">
 				{formatUSDC(amount)}
 			</div>
-			<div class="text-xs font-medium uppercase tracking-wider text-crx-gray-500 mt-1">
+			<div class="text-sm font-medium uppercase tracking-wider text-crx-gray-500 mt-1">
 				USDC
 			</div>
 		</div>
 	</div>
 
 	<div class="mt-6 flex items-center justify-between border-t border-crx-border-subtle pt-4">
-		<div class="flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium {statusColors}">
+		<div class="flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-sm font-medium {statusColors}">
 			<StatusIcon class="h-3.5 w-3.5" />
 			<span class="capitalize">{status}</span>
 		</div>

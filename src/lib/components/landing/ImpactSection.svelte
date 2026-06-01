@@ -9,13 +9,13 @@
 <section id="impact" class="border-crx-border-subtle bg-crx-page border-b">
 	<div class="mx-auto max-w-[1280px] px-6 py-20 lg:px-10 lg:py-28">
 		<div class="mb-14 max-w-2xl space-y-5" use:reveal={{ y: 24 }}>
-			<p class="text-crx-gray-500 text-xs font-medium tracking-[0.2em] uppercase">
+			<p class="text-crx-gray-500 text-sm font-medium tracking-[0.2em] uppercase">
 				Ecosystem Impact
 			</p>
 			<h2
 				class="text-crx-black text-[clamp(2.4rem,5vw,4.5rem)] leading-[0.92] font-medium tracking-[-0.06em]"
 			>
-				Verifiable on-chain execution.
+				Verifiable on-chain execution
 			</h2>
 			<p class="text-crx-gray-700 max-w-lg text-sm leading-6">
 				PullPay directly converts GitHub contributions into measurable on-chain Stellar activity.
@@ -35,7 +35,7 @@
 						<h3 class="text-crx-black text-2xl font-medium tracking-tight">
 							{metric.value}
 						</h3>
-						<p class="text-crx-gray-500 mt-2 text-xs font-bold tracking-[0.16em] uppercase">
+						<p class="text-crx-gray-500 mt-2 text-sm font-bold tracking-[0.16em] uppercase">
 							{metric.label}
 						</p>
 					</div>

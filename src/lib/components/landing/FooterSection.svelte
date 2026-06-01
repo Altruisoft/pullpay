@@ -2,10 +2,7 @@
 	import type { FooterLink } from './types';
 	import { parallax, reveal } from '$lib/motion';
 
-	const {
-		logo,
-		links
-	} = $props<{ logo: string; links: FooterLink[] }>();
+	const { logo, links } = $props<{ logo: string; links: FooterLink[] }>();
 </script>
 
 <footer class="border-crx-black bg-crx-black text-crx-white relative overflow-hidden border-t">
@@ -31,9 +28,9 @@
 				</a>
 
 				<p
-					class="text-crx-white mt-6 max-w-132 text-2xl leading-[1.05] font-black tracking-[-0.055em] text-balance sm:text-4xl"
+					class="text-crx-white mt-6 max-w-132 text-2xl leading-[1.05] font-semibold tracking-[-0.055em] text-balance sm:text-4xl"
 				>
-					Automated Contributor Rewards on Stellar.
+					Automated Contributor Rewards on Stellar
 				</p>
 				<p class="text-crx-white/62 mt-4 max-w-120 text-sm leading-6">
 					Merge the PR. Payment is automatic. Built with Soroban escrow and GitHub Actions.
@@ -53,7 +50,7 @@
 						<p class="text-crx-white mt-2 text-sm font-semibold">Stellar + Soroban</p>
 					</div>
 					<span
-						class="bg-crx-orange text-crx-white inline-flex w-fit items-center gap-2 rounded-full px-3 py-2 text-sm font-black tracking-[0.18em] uppercase"
+						class="bg-crx-orange text-crx-white inline-flex w-fit items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold tracking-[0.18em] uppercase"
 					>
 						<span class="status-dot bg-crx-white size-2 rounded-full"></span>
 						Live

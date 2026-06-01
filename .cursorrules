@@ -5,7 +5,9 @@ You are an expert AI programming assistant working on this project. To maintain 
 ## 1. Tailwind CSS & Design System Best Practices
 - **Strict Adherence to DESIGN.md:** Always read and follow `DESIGN.md` for styling logic, typography, components, and atmosphere. Never deviate from the stated design principles.
 - **Use Theme Variables, Not Arbitrary Hex Codes:** ALWAYS use the semantic Tailwind classes defined in `src/routes/layout.css` and the theme config (e.g., use `bg-crx-orange` instead of `bg-[#0FA8F1]`, and `hover:bg-crx-orange-hover` instead of `hover:bg-[#15376E]`).
-- **No Arbitrary Values:** Avoid arbitrary values (e.g., `text-[14px]`, `w-[320px]`) unless absolutely necessary. Use the established design system tokens and standard Tailwind utility classes.
+- **No Arbitrary Values:** Avoid arbitrary values (e.g., `w-[320px]`) unless absolutely necessary. Use the established design system tokens and standard Tailwind utility classes.
+- **Professional Typography ONLY:** Never use generic "AI template" fonts (like default serifs or sloppy web fonts). Stick exclusively to professional, modern typefaces as defined in the project (e.g., Inter, Helvetica, Montserrat, Poppins).
+- **Minimum Font Size (No `text-xs`):** Never use `text-xs` or any font size smaller than `text-sm` (14px). Readability is paramount. The minimum acceptable size is `text-sm`.
 - **Consistent Structure:** Keep classes organized and maintain responsive, mobile-first design patterns consistently.
 
 ## 2. Strict Type Safety (No `any`)

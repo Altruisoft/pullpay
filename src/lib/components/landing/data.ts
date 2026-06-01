@@ -28,7 +28,7 @@ export const navLinks: LinkItem[] = [
 
 // ─── Problem Section ───
 export const problemData = {
-	title: 'Traditional Rails Bleed Open Source.',
+	title: 'Traditional Rails Bleed Open Source',
 	paragraphs: [
 		'Today, rewarding a bug fix means DMing for an address on Discord, calculating fiat/crypto exchange rates, and sending manual transactions. The <strong class="text-crx-black font-semibold">15-minute administrative friction</strong> costs more than the micro-reward itself.',
 		'Stellar distributes massive top-down grants, but zero automated infrastructure exists for bottom-up micro-grants (<strong class="text-crx-black font-semibold">$5–$50</strong>). PullPay eliminates this friction by replacing manual payouts with Soroban-automated escrow.'
@@ -99,17 +99,17 @@ export const architectureCards: InfoCard[] = [
 	{
 		title: 'Soroban Reward Escrow Contract',
 		description:
-			'Built with <span class="bg-crx-black text-white px-1.5 py-0.5 mx-0.5 font-mono text-xs tracking-tight rounded-sm">rs-soroban-sdk</span>. Interfaces natively with <span class="bg-crx-black text-white px-1.5 py-0.5 mx-0.5 font-mono text-xs tracking-tight rounded-sm">SEP-41 (Stellar Asset Contract)</span> to lock USDC upfront and handle automated releases and timeout refunds.'
+			'Built with <span class="bg-crx-black text-white px-1.5 py-0.5 mx-0.5 font-mono text-sm tracking-tight rounded-sm">rs-soroban-sdk</span>. Interfaces natively with <span class="bg-crx-black text-white px-1.5 py-0.5 mx-0.5 font-mono text-sm tracking-tight rounded-sm">SEP-41 (Stellar Asset Contract)</span> to lock USDC upfront and handle automated releases and timeout refunds.'
 	},
 	{
 		title: 'GitHub Reward Automation Toolkit',
 		description:
-			'A pullpay.yml workflow utilizing <span class="bg-crx-black text-white px-1.5 py-0.5 mx-0.5 font-mono text-xs tracking-tight rounded-sm">@actions/core</span> and a Cloudflare Worker oracle. Settlement requests are authenticated via workflow executions and verify PR merges.'
+			'A pullpay.yml workflow utilizing <span class="bg-crx-black text-white px-1.5 py-0.5 mx-0.5 font-mono text-sm tracking-tight rounded-sm">@actions/core</span> and a Cloudflare Worker oracle. Settlement requests are authenticated via workflow executions and verify PR merges.'
 	},
 	{
 		title: 'Validation Layer Security',
 		description:
-			'The worker verifies the merge via GitHub API, then triggers the Soroban contract via <span class="bg-crx-black text-white px-1.5 py-0.5 mx-0.5 font-mono text-xs tracking-tight rounded-sm">@stellar/stellar-sdk</span> using ephemeral, allowance-limited keys.'
+			'The worker verifies the merge via GitHub API, then triggers the Soroban contract via <span class="bg-crx-black text-white px-1.5 py-0.5 mx-0.5 font-mono text-sm tracking-tight rounded-sm">@stellar/stellar-sdk</span> using ephemeral, allowance-limited keys.'
 	}
 ];
 
