@@ -2,9 +2,8 @@
 	import { reveal } from '$lib/motion';
 	import type { RailComparison } from './types';
 
-	const { title, description, paragraphs, rails } = $props<{
+	const { title, paragraphs, rails } = $props<{
 		title: string;
-		description: string;
 		paragraphs: string[];
 		rails: RailComparison[];
 	}>();
