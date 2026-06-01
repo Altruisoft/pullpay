@@ -21,9 +21,9 @@ This SOW represents a shared commitment between the Builder and the Ambassador C
 
 ## 3. Problem Statement & Objective
 
-| **Problem Being Addressed**     | What specific problem, gap, or blocker is this Instaward intended to solve?                       | **Stellar ecosystem projects can distribute grants and hackathon prizes, but there is no reusable infrastructure for rewarding small, verifiable GitHub contributions — bug fixes, documentation, translations, SDK enhancements. As a result, contributor rewards are coordinated manually, creating friction that discourages recurring ecosystem participation.** |
+| **Problem Being Addressed**     | What specific problem, gap, or blocker is this Instaward intended to solve?                       | **Data shows 37% of open-source Pull Requests (PRs) are merged in under 1 hour for minor fixes. Yet, rewarding a contributor $5 for a quick fix requires 15–20 minutes of administrative overhead (DMing for addresses, calculating fiat/crypto exchange rates, manual transfers). Because the manual coordination friction costs more than the micro-reward itself, recurring ecosystem participation is heavily discouraged. There is zero automated infrastructure for bottom-up, automated micro-grants ($5–$50).** |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Objective of This Instaward** | In one or two sentences, what will be true at the end of 30 days if this Instaward is successful? | **Deliver a working, testnet-ready contributor reward infrastructure that enables Stellar ecosystem projects to compensate contributors through automated Soroban-based USDC settlements — converting GitHub contributions into measurable on-chain Stellar activity.**                                                                                              |
+| **Objective of This Instaward** | In one or two sentences, what will be true at the end of 30 days if this Instaward is successful? | **Deliver a working contributor reward infrastructure that eliminates the 15-minute administrative friction. Using SEP-41 (Stellar Asset Contract) and Soroban, PullPay automates USDC settlements natively via a GitHub workflow — automatically converting GitHub merge events into measurable on-chain Stellar activity.**                                                                                              |
 
 *Example prompts for builders: What is currently preventing progress? What is unclear, missing, or unbuilt today? Why is this problem worth solving now?*
 
@@ -38,129 +38,51 @@ At the end of this sprint, any open-source maintainer can:
 
 **No manual payment coordination required.**
 
-### 3.2 Current Ecosystem Gap
+### 3.2 The Gap & Traditional Rails
 
-Today, Stellar ecosystem projects — SDKs, developer tools, community resources — can distribute large grants and hackathon prizes, but there is no reusable infrastructure for rewarding small, verifiable contributions like bug fixes, documentation improvements, translations, and SDK enhancements.
+Stellar projects distribute massive top-down grants (e.g. ~$1.16M in SCF Round 20), but micro-rewards for bottom-up GitHub contributions are choked by manual coordination (Discord DMs, spreadsheets). A maintainer spends an average of 15 minutes processing a single payout. Traditional rails fail for micro-settlement:
 
-As a result, contributor rewards are coordinated manually (via Discord, spreadsheets, or direct messages), creating friction that discourages recurring participation. Historical examples of custodial bounty platforms have highlighted the risks of relying on centralized fund management for contributor rewards.
+| Alternative | Key Limitation |
+| :--- | :--- |
+| **Stripe** | 2.9% + $0.30 fee — 36% erosion on a $5 reward. |
+| **PayPal** | Frequent account freezes. Geographically restricted. |
+| **Ethereum** | Gas fees exceed $15. Micro-rewards are economically dead. |
 
-### 3.3 Why Not Traditional Payment Rails?
+### 3.3 Why Stellar & Ecosystem Impact
 
-Traditional alternatives fail for small, global contributor rewards:
+Stellar enables economically viable micro-rewards. PullPay introduces Stellar through a familiar GitHub workflow, converting contributions into measurable on-chain activity:
 
-| Alternative             | Key Limitation                                                                       |
-| :---------------------- | :----------------------------------------------------------------------------------- |
-| **Stripe**        | 2.9% + $0.30 — a $5 reward loses 36%. Not universally available across all regions. |
-| **PayPal**        | Frequent account freezes. Restricted in many developing nations.                     |
-| **Bank Transfer** | $15–$45 per international transfer. 3–5 day settlement.                            |
-| **Ethereum**      | Gas fees exceed $15. Micro-rewards are economically impossible.                      |
+- **Near-zero fees (<$0.01):** $5 micro-rewards remain $5. No fee erosion.
+- **Sub-5-second finality:** USDC arrives instantly on merge.
+- **On-chain Growth:** Every settlement creates a funded Stellar wallet, a USDC transfer, and a Soroban contract invocation.
 
-Stellar enables economically viable micro-rewards due to its low transaction costs and fast settlement. PullPay replaces the entire manual payout process with: **merge the PR → payment is automatic.**
+### 3.4 Existing Approaches
 
-### 3.4 Why Stellar
+Existing platforms focus on traditional rails or generalized grants. PullPay focuses exclusively on Soroban-powered automated settlement using native Stellar developer tooling.
 
-Stellar provides a uniquely attractive combination of features that make contributor reward automation viable:
+| Platform | Primary Focus |
+| :--- | :--- |
+| **Algora** | GitHub bounties via traditional payment rails (Stripe). Minimum feasible reward is $20 due to fee floors. |
+| **Polar.sh** | Open-source monetization and subscription sponsorship. |
+| **PullPay** | Automated settlement natively on Stellar (via **`rs-soroban-sdk`**, **SEP-41 SAC**, & **`@stellar/stellar-sdk`**). |
 
-| Stellar Feature                                                                 | What It Enables                                                                                                                                 |
-| :------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Near-zero fees (<$0.01)** | $5 micro-rewards remain $5. No fee erosion. |                                                                                                                                                 |
-| **Native USDC**                                                           | Stable, real-world value. No volatile tokens.                                                                                                   |
-| **Soroban smart contracts**                                               | Programmable escrow — funds locked upfront, released on merge, refunded on timeout. No intermediary holds funds.                               |
-| **Sub-5-second finality**                                                 | The moment a PR is merged, USDC arrives in the contributor's wallet. Instant.                                                                   |
-| **Permissionless & global**                                               | Stellar supports global participation through permissionless wallet access, removing geographic barriers common in traditional payment systems. |
+### 3.5 Validation Scope & Practical Use Cases
 
-### 3.5 Why This Benefits Stellar
+**Validation Scope:** PullPay validates repository association, PR existence, and PR merged status. It does **not** evaluate code quality (maintainers retain full judgment).
 
-PullPay is designed to onboard developers into Stellar through a workflow they already understand: GitHub.
+**Use Cases:**
+- **SDK bug fixes:** Maintainer posts $20 reward. Paid instantly on merge.
+- **Documentation rewards:** Community offers $5 improvements (viable due to <$0.01 fees).
+- **Ambassador campaigns:** Transparent bounty campaigns with verifiable on-chain settlement.
 
-PullPay introduces Stellar through a familiar GitHub workflow, reducing onboarding friction for open-source contributors. For some contributors, receiving a reward through PullPay may become their first practical interaction with:
+### 3.6 Sprint Constraints & Targets
 
-- A Stellar wallet (Freighter)
-- USDC on Stellar
-- A Soroban smart contract
+- **Open Source:** MIT Licensed (Soroban contracts, GitHub workflows, SvelteKit app).
+- **Sustainability:** Zero protocol fee. Focus is entirely on building ecosystem tooling.
+- **Adoption Target:** 3 public repos, 5 unique contributors, 5 successful testnet settlements.
+- **Why Instawards:** Focuses purely on delivering a reusable 30-day execution POC, not an open-ended marketplace.
 
-This creates a low-friction path from **GitHub contributor → Stellar ecosystem participant**.
-
-### 3.6 Ecosystem Impact
-
-Every successful reward settlement creates:
-
-- A funded Stellar wallet (new ecosystem user)
-- A USDC transaction on Stellar (on-chain activity)
-- A Soroban contract interaction (smart contract usage)
-- A contributor exposed to the Stellar ecosystem (developer acquisition)
-
-This Instaward directly converts GitHub contributions into measurable on-chain Stellar activity.
-
-### 3.7 Existing Approaches
-
-Existing bounty and sponsorship platforms demonstrate demand for contributor incentives, but most are designed around centralized payment rails, sponsorship funding, or campaign-based grants. PullPay focuses specifically on automated contribution-level settlement using Soroban smart contracts and Stellar USDC.
-
-| Platform           | Primary Focus                                      |
-| :----------------- | :------------------------------------------------- |
-| **Algora**   | GitHub bounties via traditional payment rails      |
-| **Polar.sh** | Open-source monetization and sponsorship           |
-| **Gitcoin**  | Community funding rounds and public goods grants   |
-| **PullPay**  | Automated contribution-level settlement on Stellar |
-
-PullPay complements these existing approaches by providing a lightweight, GitHub-native reward workflow built around Soroban escrow and Stellar USDC settlements.
-
-### 3.8 Practical Use Cases
-
-| Use Case                        | Example                                                                                                                      |
-| :------------------------------ | :--------------------------------------------------------------------------------------------------------------------------- |
-| **SDK bug fixes**         | Stellar SDK maintainer posts $20 reward for a bug fix. Contributor submits PR. On merge, $20 USDC is released automatically. |
-| **Documentation rewards** | Community program offers $5–$10 for documentation improvements. Only viable because Stellar fees are <$0.01.                |
-| **Hackathon follow-ups**  | Organizer pre-funds rewards via Soroban escrow. Winners are paid automatically when their code is merged.                    |
-| **Ambassador campaigns**  | Chapter leads run transparent bounty campaigns with verifiable on-chain settlement.                                          |
-
-### 3.9 Open Source Commitment
-
-All source code will be released under the **MIT License**:
-
-- Soroban smart contracts (Rust)
-- GitHub workflow templates
-- Cloudflare Worker validation adapter
-- SvelteKit web application
-- Maintainer onboarding documentation
-
-After this grant, any project can use PullPay without permission, payment, or dependency on Altruisoft.
-
-### 3.10 Sustainability
-
-This sprint introduces **no protocol fee**. The focus is entirely on building a working, open-source tool. Future sustainability and commercialization are outside the scope of this Instaward.
-
-### 3.11 Initial Adoption Targets
-
-During the sprint, PullPay will be validated with:
-
-- 3 public GitHub repositories
-- 5 unique contributors
-- 5 successful reward settlements on Testnet
-
-Candidate validation repositories include Stellar community tooling, open-source developer utilities, and ambassador-led repositories. The validation repositories will be selected from publicly accessible open-source projects to ensure the integration process can be replicated by other Stellar ecosystem teams after the sprint.
-
-### 3.12 Why This Fits Instawards
-
-This sprint focuses on delivering a narrowly scoped, testnet-ready implementation of contributor reward infrastructure. The objective is not to build a complete bounty marketplace, but to validate a reusable piece of ecosystem tooling that Stellar projects can adopt immediately after completion.
-
-### 3.13 Validation Scope
-
-PullPay validates only:
-
-- Repository association (the PR belongs to the correct repo)
-- Pull request existence (the PR is real)
-- Pull request merged status (the PR was merged, not just closed)
-
-PullPay intentionally does **not** evaluate:
-
-- Code quality
-- Contribution value
-- Contributor intent
-
-Maintainers remain fully responsible for deciding which Pull Requests to merge. PullPay automates the payment — not the judgment.
-
-### 3.14 How It Works
+### 3.7 How It Works
 
 ```
 Maintainer creates reward (via PullPay interface)
@@ -186,9 +108,9 @@ Soroban contract releases USDC to contributor
 
 | **Deliverable** | **Description (What will be built or produced?)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | **Why this matters**                                                                                                                                                                             |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Deliverable 1         | **Soroban Reward Escrow Contract:** A Soroban smart contract deployed on Testnet supporting: create reward, deposit USDC, assign contributor, release on verified merge, optional timelocks (dispute windows), and timeout-based automatic refunds (with extension requests).                                                                                                                                                                                                                                                                                                                                                             | The on-chain settlement layer. Funds are locked upfront (contributor trusts the reward exists), released automatically on merge (no manual payout), and refunded on timeout (maintainer is protected). Maintainers have dispute windows, and contributors can extend timeouts. |
-| Deliverable 2         | **GitHub Reward Automation Toolkit:** A reusable GitHub workflow template (`pullpay.yml`) and Cloudflare Worker that verifies PR merge status via official GitHub API and triggers the Soroban contract. The worker acts solely as a verification oracle using ephemeral, allowance-limited keys so it cannot drain the escrow if compromised. **Result:** A maintainer can automate contributor payouts by adding a single YAML file to their repo. | This is the core adoption mechanism. It meets maintainers where they already work — inside GitHub — with zero Web3 expertise required.                                                               |
-| Deliverable 3         | **Reward Creation & Claim Interface:** A minimal SvelteKit web interface (deployed on Testnet) allowing maintainers to create rewards linked to GitHub Issues, and a GitHub Bot integration allowing contributors to claim rewards simply by commenting `/pullpay claim <address>` on the PR.                                                                                                                                                                                                                                                                                                                                     | A focused entry point for creating and claiming rewards. By moving claiming to GitHub comments, we remove the friction of requiring contributors to connect wallets on a separate site.                                                                                                  |
+| Deliverable 1         | **Soroban Reward Escrow Contract:** A Soroban smart contract built with **`rs-soroban-sdk`** deployed on Testnet. Interfaces natively with **SEP-41 (Stellar Asset Contract)** for USDC locking and transfers. Supports: create reward, deposit USDC, assign contributor, release on verified merge, optional timelocks (dispute windows), and timeout-based automatic refunds.                                                                                                                                                                                                                                                                                                                                                             | The on-chain settlement layer. Funds are locked upfront (contributor trusts the reward exists), released automatically on merge (no manual payout), and refunded on timeout (maintainer is protected). Maintainers have dispute windows, and contributors can extend timeouts. |
+| Deliverable 2         | **GitHub Reward Automation Toolkit:** A reusable GitHub workflow template (`pullpay.yml`) utilizing `@actions/core` and a Cloudflare Worker that verifies PR merge status via the official GitHub API. Upon verification, the worker acts as an oracle and triggers the Soroban contract via **`@stellar/stellar-sdk`**. The worker uses ephemeral, allowance-limited keys to prevent escrow draining if compromised. **Result:** A maintainer automates payouts by adding one YAML file. | This is the core adoption mechanism. It meets maintainers where they already work — inside GitHub — with zero Web3 expertise required. Eliminates the 15-minute manual payout friction.                                                               |
+| Deliverable 3         | **Reward Creation & Claim Interface:** A minimal SvelteKit web interface (deployed on Testnet) integrating **`@stellar/freighter-api`** allowing maintainers to create rewards linked to GitHub Issues. Includes a GitHub Bot integration allowing contributors to claim rewards simply by commenting `/pullpay claim <address>` on the PR.                                                                                                                                                                                                                                                                                                                                     | A focused entry point for creating and claiming rewards. By moving claiming to GitHub comments, we remove the friction of requiring contributors to connect wallets on a separate site.                                                                                                  |
 | Deliverable 4         | **Ecosystem Validation Package:** Demonstrated end-to-end operation across at least 3 publicly accessible repositories with a minimum of 5 successful reward settlements and 5 unique Stellar wallets. Validation will be performed using publicly accessible open-source repositories and contributors participating during the sprint. Includes a demo video showing both maintainer and contributor perspectives, and a public integration guide.                                                                                                                             | Proves the full contributor reward lifecycle works end-to-end and generates real on-chain Stellar activity. Reviewer can verify every settlement on Stellar Testnet Explorer.                          |
 
 **Out-of-Scope (Explicitly Not Included)**

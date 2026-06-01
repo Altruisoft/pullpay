@@ -20,22 +20,23 @@
 				>
 					{title}
 				</h2>
-				<p class="text-crx-gray-700 max-w-80 text-sm leading-6">
-					{description}
-				</p>
 			</div>
 
 			<div class="space-y-10" use:reveal={{ delay: 0.1, y: 24 }}>
 				<div class="text-crx-gray-700 space-y-6 text-lg leading-7">
 					{#each paragraphs as paragraph, _i (_i)}
-						<p>{paragraph}</p>
+						<p>{@html paragraph}</p>
 					{/each}
 				</div>
 
-				<div class="border-crx-border-subtle divide-crx-border-subtle flex flex-col divide-y border-y">
+				<div
+					class="border-crx-border-subtle divide-crx-border-subtle flex flex-col divide-y border-y"
+				>
 					{#each rails as rail, index (index)}
-						<div class="grid grid-cols-[100px_1fr] items-center gap-4 py-4 sm:grid-cols-[140px_1fr]">
-							<h3 class="text-crx-black text-sm font-bold uppercase tracking-wider">{rail.name}</h3>
+						<div
+							class="grid grid-cols-[100px_1fr] items-center gap-4 py-4 sm:grid-cols-[140px_1fr]"
+						>
+							<h3 class="text-crx-black text-sm font-bold tracking-wider uppercase">{rail.name}</h3>
 							<p class="text-crx-gray-600 text-sm font-medium">{rail.limitation}</p>
 						</div>
 					{/each}

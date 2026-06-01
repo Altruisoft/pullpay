@@ -45,22 +45,11 @@ PullPay enables Stellar ecosystem projects to compensate contributors without ma
 
 ### Section Headline
 
-**"Manual Payment Coordination Discourages Participation"**
+**"Traditional Rails Bleed Open Source."**
 
 ### Body
 
-Stellar ecosystem projects can distribute grants and hackathon prizes, but there is no reusable infrastructure for rewarding small, verifiable GitHub contributions — bug fixes, documentation, translations, SDK enhancements. As a result, contributor rewards are coordinated manually (via Discord, spreadsheets, or direct messages), creating friction that discourages recurring participation.
-
-Furthermore, traditional payment rails fail for small, global contributor rewards:
-
-| Alternative | Key Limitation |
-|---|---|
-| **Stripe** | 2.9% + $0.30 — a $5 reward loses 36%. Not universally available. |
-| **PayPal** | Frequent account freezes. Restricted in many developing nations. |
-| **Bank Transfer** | $15–$45 per international transfer. 3–5 day settlement. |
-| **Ethereum** | Gas fees exceed $15. Micro-rewards are economically impossible. |
-
-**The Solution:** Stellar enables economically viable micro-rewards due to its low transaction costs and fast settlement.
+Traditional payment rails fail for micro-rewards: Stripe charges $0.30 + 2.9% (destroying $5 rewards), and Ethereum gas fees exceed $15. PullPay replaces manual payout friction (Discord DMs, spreadsheets) with automated, near-zero fee Soroban escrow.
 
 ---
 
@@ -136,11 +125,13 @@ PullPay does **not** evaluate code quality, contribution value, or contributor i
 
 ## SECTION 7 - ECOSYSTEM IMPACT
 
-Every successful reward settlement creates:
-- A funded Stellar wallet (new ecosystem user)
-- A USDC transaction on Stellar (on-chain activity)
-- A Soroban contract interaction (smart contract usage)
-- A contributor exposed to the Stellar ecosystem (developer acquisition)
+**"On-Chain Developer Acquisition"**
+
+Every successfully claimed reward is a measurable adoption event:
+- **Funded Wallet:** Contributor creates/funds a Stellar wallet.
+- **USDC Transfer:** Real on-chain settlement activity.
+- **Contract Invocation:** Direct Soroban usage.
+- **Ecosystem Growth:** A GitHub developer practically exposed to the Stellar ecosystem.
 
 ---
 

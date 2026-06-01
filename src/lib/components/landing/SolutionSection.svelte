@@ -37,7 +37,7 @@
 									{mechanism.title}
 								</h3>
 								<p class="text-crx-gray-700 mt-2.5 text-sm leading-6">
-									{mechanism.description}
+									{@html mechanism.description}
 								</p>
 							</div>
 						</div>
