@@ -57,7 +57,7 @@ Traditional alternatives fail for small, global contributor rewards:
 
 Stellar enables economically viable micro-rewards due to its low transaction costs and fast settlement. PullPay replaces the entire manual payout process with: **merge the PR → payment is automatic.**
 
-### 3.5 Why Stellar
+### 3.4 Why Stellar
 
 Stellar provides a uniquely attractive combination of features that make contributor reward automation viable:
 
@@ -69,7 +69,7 @@ Stellar provides a uniquely attractive combination of features that make contrib
 | **Sub-5-second finality**                                                 | The moment a PR is merged, USDC arrives in the contributor's wallet. Instant.                                                                   |
 | **Permissionless & global**                                               | Stellar supports global participation through permissionless wallet access, removing geographic barriers common in traditional payment systems. |
 
-### 3.6 Why This Benefits Stellar
+### 3.5 Why This Benefits Stellar
 
 PullPay is designed to onboard developers into Stellar through a workflow they already understand: GitHub.
 
@@ -81,7 +81,7 @@ PullPay introduces Stellar through a familiar GitHub workflow, reducing onboardi
 
 This creates a low-friction path from **GitHub contributor → Stellar ecosystem participant**.
 
-### 3.7 Ecosystem Impact
+### 3.6 Ecosystem Impact
 
 Every successful reward settlement creates:
 
@@ -92,7 +92,7 @@ Every successful reward settlement creates:
 
 This Instaward directly converts GitHub contributions into measurable on-chain Stellar activity.
 
-### 3.8 Existing Approaches
+### 3.7 Existing Approaches
 
 Existing bounty and sponsorship platforms demonstrate demand for contributor incentives, but most are designed around centralized payment rails, sponsorship funding, or campaign-based grants. PullPay focuses specifically on automated contribution-level settlement using Soroban smart contracts and Stellar USDC.
 
@@ -105,7 +105,7 @@ Existing bounty and sponsorship platforms demonstrate demand for contributor inc
 
 PullPay complements these existing approaches by providing a lightweight, GitHub-native reward workflow built around Soroban escrow and Stellar USDC settlements.
 
-### 3.9 Practical Use Cases
+### 3.8 Practical Use Cases
 
 | Use Case                        | Example                                                                                                                      |
 | :------------------------------ | :--------------------------------------------------------------------------------------------------------------------------- |
@@ -114,7 +114,7 @@ PullPay complements these existing approaches by providing a lightweight, GitHub
 | **Hackathon follow-ups**  | Organizer pre-funds rewards via Soroban escrow. Winners are paid automatically when their code is merged.                    |
 | **Ambassador campaigns**  | Chapter leads run transparent bounty campaigns with verifiable on-chain settlement.                                          |
 
-### 3.10 Open Source Commitment
+### 3.9 Open Source Commitment
 
 All source code will be released under the **MIT License**:
 
@@ -126,11 +126,11 @@ All source code will be released under the **MIT License**:
 
 After this grant, any project can use PullPay without permission, payment, or dependency on Altruisoft.
 
-### 3.11 Sustainability
+### 3.10 Sustainability
 
 This sprint introduces **no protocol fee**. The focus is entirely on building a working, open-source tool. Future sustainability and commercialization are outside the scope of this Instaward.
 
-### 3.12 Initial Adoption Targets
+### 3.11 Initial Adoption Targets
 
 During the sprint, PullPay will be validated with:
 
@@ -140,11 +140,11 @@ During the sprint, PullPay will be validated with:
 
 Candidate validation repositories include Stellar community tooling, open-source developer utilities, and ambassador-led repositories. The validation repositories will be selected from publicly accessible open-source projects to ensure the integration process can be replicated by other Stellar ecosystem teams after the sprint.
 
-### 3.13 Why This Fits Instawards
+### 3.12 Why This Fits Instawards
 
 This sprint focuses on delivering a narrowly scoped, testnet-ready implementation of contributor reward infrastructure. The objective is not to build a complete bounty marketplace, but to validate a reusable piece of ecosystem tooling that Stellar projects can adopt immediately after completion.
 
-### 3.14 Validation Scope
+### 3.13 Validation Scope
 
 PullPay validates only:
 
@@ -160,7 +160,7 @@ PullPay intentionally does **not** evaluate:
 
 Maintainers remain fully responsible for deciding which Pull Requests to merge. PullPay automates the payment — not the judgment.
 
-### 3.15 How It Works
+### 3.14 How It Works
 
 ```
 Maintainer creates reward (via PullPay interface)
@@ -222,7 +222,7 @@ List anything that might be assumed but is not included in this Instaward scope.
 
 ## 6. Evidence of Completion (Required)
 
-> **Important guidance:** Evidence should lear, verifiable, and easy to review by the Ambassador Chapter Lead **with minimal technical expertise**.
+> **Important guidance:** Evidence should be clear, verifiable, and easy to review by the Ambassador Chapter Lead **with minimal technical expertise**.
 
 ### 6.1 Planned Evidence to Be Submitted
 

@@ -200,6 +200,26 @@ export const faqItems: FaqItem[] = [
 		question: 'Why Stellar instead of traditional payment rails?',
 		answer:
 			'Stripe charges 2.9% + $0.30 per transaction, making a $5 micro-reward economically unviable (36% fee erosion). Stellar enables near-zero fee (<$0.01), instant, global settlement via USDC.'
+	},
+	{
+		question: 'How do I convert USDC to local currency?',
+		answer:
+			'USDC on Stellar can be converted to local currency through major exchanges that support Stellar USDC (such as Coinbase, Kraken, or Binance). You can also use on/off-ramp services that connect directly to local bank accounts.'
+	},
+	{
+		question: 'Do I need a USDC trustline?',
+		answer:
+			'Yes. To receive USDC on Stellar, your wallet must have a USDC trustline. PullPay guides you through adding one during the claim process — it takes a single transaction and costs less than $0.01.'
+	},
+	{
+		question: 'Who pays the transaction fees?',
+		answer:
+			'Transaction fees on Stellar are near-zero (<$0.01). The settlement transaction fee is covered by the PullPay protocol account so neither the maintainer nor the contributor needs to worry about gas costs.'
+	},
+	{
+		question: 'Is my wallet address public if I claim via GitHub?',
+		answer:
+			'Yes — claiming via a PR comment makes your Stellar address visible on the PR. If you prefer privacy, you can claim through the PullPay web interface instead, where your address is only shared with the smart contract.'
 	}
 ];
 

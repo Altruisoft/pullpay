@@ -43,6 +43,9 @@
 		property="og:description"
 		content="Automate USDC payouts to open-source contributors using GitHub Actions and Soroban smart contracts."
 	/>
+	<meta property="og:image" content={`${$page.url.origin}/og-image.png`} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 
 	<!-- Twitter / Threads / Instagram -->
 	<meta name="twitter:card" content="summary_large_image" />
@@ -52,6 +55,7 @@
 		name="twitter:description"
 		content="Automate USDC payouts to open-source contributors using GitHub Actions and Soroban smart contracts."
 	/>
+	<meta name="twitter:image" content={`${$page.url.origin}/og-image.png`} />
 
 	<!-- SEO Best Practices -->
 	<link rel="canonical" href={$page.url.href} />

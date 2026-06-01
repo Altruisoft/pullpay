@@ -103,9 +103,9 @@
 									Reward Amount
 								</p>
 								<p class="text-crx-black mt-1 text-2xl leading-none font-semibold tracking-tight">
-									250.00 XLM
+									37.25 USDC
 								</p>
-								<p class="text-crx-gray-500 mt-1.5 text-sm font-medium">$37.25 USD</p>
+								<p class="text-crx-gray-500 mt-1.5 text-sm font-medium">Stellar Network</p>
 							</div>
 						</div>
 
@@ -192,7 +192,7 @@
 									/>
 									<div>
 										<p class="text-crx-gray-500 text-sm font-semibold">Maintainer</p>
-										<p class="text-crx-black text-sm font-medium">0x7F...A3B9</p>
+										<p class="text-crx-black text-sm font-medium">GBXF...7Q3K</p>
 									</div>
 								</div>
 								<div class="flex items-center gap-2.5">

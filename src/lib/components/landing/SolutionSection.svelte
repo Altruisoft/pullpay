@@ -16,9 +16,9 @@
 					Trust-minimized settlement infrastructure.
 				</h2>
 				<p class="text-crx-gray-700 max-w-88 text-sm leading-6">
-					PullPay relies on three core components. The validation layer never holds funds — it only
-					verifies PR merges before triggering the on-chain contract.
-				</p>
+				PullPay relies on three core components. The GitHub Action only notifies — the Worker
+				independently verifies via GitHub API and the contract enforces per-reward release limits.
+			</p>
 			</div>
 
 			<div class="space-y-5" use:reveal={{ delay: 0.1, y: 24 }}>
