@@ -51,7 +51,7 @@
 		<!-- Progress Bar -->
 		<div class="flex h-1.5 w-full bg-crx-gray-100">
 			<div 
-				class="h-full bg-[#0FA8F1] transition-all duration-500 ease-out" 
+				class="h-full bg-crx-orange transition-all duration-500 ease-out" 
 				style="width: {step === 1 ? '50%' : step === 2 ? '80%' : '100%'}"
 			></div>
 		</div>
@@ -104,7 +104,7 @@
 					</div>
 
 					<button 
-						class="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0FA8F1] py-4 text-base font-semibold text-white transition-all hover:bg-[#15376E] active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none"
+						class="flex w-full items-center justify-center gap-2 rounded-xl bg-crx-orange py-4 text-base font-semibold text-white transition-all hover:bg-crx-orange-hover active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none"
 						disabled={!isFormValid}
 						onclick={() => step = 2}
 					>
@@ -130,7 +130,7 @@
 					</div>
 
 					<button 
-						class="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0FA8F1] py-4 text-base font-semibold text-white transition-all hover:bg-[#15376E] active:scale-[0.98] disabled:opacity-70 disabled:pointer-events-none"
+						class="flex w-full items-center justify-center gap-2 rounded-xl bg-crx-orange py-4 text-base font-semibold text-white transition-all hover:bg-crx-orange-hover active:scale-[0.98] disabled:opacity-70 disabled:pointer-events-none"
 						disabled={isSimulating}
 						onclick={simulateDeposit}
 					>
@@ -163,7 +163,7 @@
 					<div class="flex w-full flex-col gap-3">
 						<a 
 							href="/app" 
-							class="inline-flex w-full items-center justify-center rounded-xl bg-[#0FA8F1] py-4 font-semibold text-white hover:bg-[#15376E] active:scale-[0.98] transition-all"
+							class="inline-flex w-full items-center justify-center rounded-xl bg-crx-orange py-4 font-semibold text-white hover:bg-crx-orange-hover active:scale-[0.98] transition-all"
 						>
 							Back to Dashboard
 						</a>
