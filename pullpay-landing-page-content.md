@@ -71,13 +71,13 @@ Furthermore, traditional payment rails fail for small, global contributor reward
 **"Three Steps. One File. Verifiable Settlement."**
 
 ### Maintainer Flow
-1. **Create Reward** - The maintainer creates a USDC reward linked to a GitHub Issue via the PullPay interface.
+1. **Create Reward** - The maintainer creates a USDC reward linked to a GitHub Issue via the PullPay interface. (Optional: Configures a 24-hour timelock for dispute protection).
 2. **Add Workflow** - The maintainer adds a single `pullpay.yml` GitHub workflow file to their repository.
 3. **Merge PR** - When a contributor submits a PR, the maintainer reviews and merges it. The GitHub Action triggers the Cloudflare validation layer, which then tells the Soroban contract to release the funds.
 
 ### Contributor Flow
-1. **Claim Reward** - The contributor connects their Freighter wallet on the PullPay interface and registers their PR link.
-2. **Get Paid** - Upon successful merge, the USDC is automatically deposited into their Stellar wallet.
+1. **Claim Reward** - The contributor simply comments `/pullpay claim <stellar-address>` directly on their PR. No need to register on a separate website.
+2. **Get Paid** - Upon successful merge, the USDC is automatically deposited into their Stellar wallet (after the optional timelock period). If the review takes too long, the contributor can request a timeout extension directly from the bot.
 
 ---
 
@@ -108,9 +108,9 @@ Furthermore, traditional payment rails fail for small, global contributor reward
 ### Body
 
 PullPay relies on three core components:
-1. **Soroban Reward Escrow Contract:** Locks USDC upfront so contributors trust the reward exists, and handles automated releases and timeout refunds.
+1. **Soroban Reward Escrow Contract:** Locks USDC upfront so contributors trust the reward exists, handles automated releases, optional timelocks (dispute windows), and timeout refunds (with extension requests).
 2. **GitHub Reward Automation Toolkit:** A reusable `pullpay.yml` workflow and a Cloudflare Worker.
-3. **Validation Layer Security:** Settlement requests are authenticated through GitHub workflow executions and independently verified against live GitHub API data before triggering Soroban settlement. The worker acts solely as a verification layer and does not hold custody of funds.
+3. **Validation Layer Security:** Settlement requests are authenticated through GitHub workflow executions and independently verified against live GitHub API data. The worker uses ephemeral, allowance-limited keys so it acts solely as a verification layer and can never drain the escrow even if compromised.
 
 ### Validation Scope
 

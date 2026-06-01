@@ -58,7 +58,7 @@ export const howItWorksSteps: StepItem[] = [
 		eyebrow: '02',
 		title: 'Add Workflow',
 		description:
-			'The maintainer adds a single `pullpay.yml` GitHub workflow file to their repository. This is the only setup required.',
+			'The maintainer adds a single `pullpay.yml` GitHub workflow file to their repository. You can choose Instant Payouts or a 24-hour Timelock for a dispute window.',
 		microcopy: 'One file. No SDK, no API keys, no complex integration.',
 		role: 'Maintainer'
 	},
@@ -111,7 +111,7 @@ export const architectureCards: InfoCard[] = [
 	{
 		title: 'Validation Layer Security',
 		description:
-			'The worker acts solely as a verification layer and does not hold custody of funds. It confirms PR merge status against the official GitHub API before triggering Soroban settlement.'
+			'The worker acts solely as a verification layer using ephemeral, allowance-limited keys so it cannot drain the escrow. It confirms PR merge status against the official GitHub API before triggering Soroban settlement.'
 	}
 ];
 
@@ -184,7 +184,12 @@ export const faqItems: FaqItem[] = [
 	{
 		question: 'What happens if a PR is never merged?',
 		answer:
-			'The Soroban contract includes a timeout-based automatic refund mechanism. If a PR is never merged within the configured deadline, the maintainer gets their USDC back automatically.'
+			'The Soroban contract includes a timeout-based automatic refund mechanism. If a PR takes longer than expected, contributors can request a timeout extension. Otherwise, the maintainer gets their USDC back automatically.'
+	},
+	{
+		question: 'What if I accidentally merge a bad PR?',
+		answer:
+			'Maintainers can configure a 24-hour timelock instead of instant payouts. This provides a dispute window to cancel the settlement if the merged code contains fatal bugs or malicious changes.'
 	},
 	{
 		question: 'Do I need Freighter to use PullPay?',
