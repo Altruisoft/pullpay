@@ -49,7 +49,7 @@
 
 		<div class="flex items-center gap-4">
 			<Button
-				href="#final-cta"
+				href="/app"
 				variant="secondary"
 				size="sm"
 				class="border-crx-border-subtle text-crx-black hidden rounded-xl border bg-white px-5 py-2.5 text-base font-medium shadow-sm transition-all hover:shadow-md lg:inline-flex"
@@ -103,7 +103,7 @@
 			</div>
 			<div class="border-crx-border-subtle mt-3 border-t pt-3">
 				<Button
-					href="#final-cta"
+					href="/app"
 					variant="secondary"
 					size="lg"
 					class="border-crx-border-subtle w-full justify-center rounded-xl border bg-white shadow-sm"

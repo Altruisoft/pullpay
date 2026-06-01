@@ -54,7 +54,7 @@
 
 					<div class="flex flex-wrap gap-4" use:reveal={{ delay: 0.2, y: 16 }}>
 						<Button
-							href="#top"
+							href="/app"
 							variant="black"
 							size="lg"
 							class="rounded-2xl transition-transform duration-300 hover:scale-[1.03]"

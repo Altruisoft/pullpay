@@ -42,7 +42,7 @@
 
 				<div class="mt-8 flex flex-wrap items-center gap-6">
 					<Button
-						href="#final-cta"
+						href="/app"
 						variant="primary"
 						size="lg"
 						class="hover:bg-crx-orange-hover rounded-[0.9rem] bg-[#0FA8F1] px-8 py-3.5 font-medium text-white shadow-lg"
