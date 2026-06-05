@@ -20,24 +20,22 @@
 
 ## SECTION 1 - HERO
 
-### Primary Headline (Options)
+### Primary Headline
 
-**Option A - Developer-driven:**
-> Merge the PR. Payment is Automatic.
-> GitHub-to-Soroban reward infrastructure for the Stellar ecosystem.
-
-**Option B - Maintainer-driven:**
-> Stop Coordinating Payouts Manually.
-> Automate USDC contributor rewards directly from your GitHub workflow.
+> Turn GitHub Contributions Into On-Chain Stellar Activity
 
 ### Sub-headline
 
-PullPay enables Stellar ecosystem projects to compensate contributors without manual payment coordination. Funds are secured in a Soroban escrow contract and released automatically the moment a Pull Request is verified and merged.
+Automate contributor rewards with Soroban escrow and Stellar USDC. Maintainers create rewards once. Contributors get paid when PRs are merged.
 
 ### CTA
 
-* **[Create a Reward]** - Primary CTA (for Maintainers)
-* **[Claim a Reward]** - Secondary CTA (for Contributors)
+* **[Create Reward]** - Primary CTA (for Maintainers)
+* **[How it works]** - Secondary CTA (anchor link)
+
+### Visual
+
+No background photograph. The hero visual is the product itself — an escrow reward card showing a live reward state (locked → merged → settled) with real wallet addresses and USDC amounts. A small "Built on" badge shows Stellar + Soroban.
 
 ---
 
@@ -45,15 +43,50 @@ PullPay enables Stellar ecosystem projects to compensate contributors without ma
 
 ### Section Headline
 
-**"Traditional Rails Bleed Open Source."**
+**"Why Small Contributions Rarely Get Rewarded"**
 
 ### Body
 
-Traditional payment rails fail for micro-rewards: Stripe charges $0.30 + 2.9% (destroying $5 rewards), and Ethereum gas fees exceed $15. PullPay replaces manual payout friction (Discord DMs, spreadsheets) with automated, near-zero fee Soroban escrow.
+Open-source ecosystems depend on hundreds of small contributions: bug fixes, documentation updates, translations, and developer tooling improvements. Yet rewarding these contributions is surprisingly difficult.
+
+For a $5–20 reward, maintainers often coordinate payouts manually through Discord, spreadsheets, direct messages, and wallet collection. The administrative overhead frequently exceeds the value of the reward itself.
+
+As a result, many valuable contributions go unrewarded. PullPay automates the entire settlement process through GitHub workflows and Soroban escrow.
+
+### Fee Comparison Table
+
+| Rail | Limitation |
+|---|---|
+| **Stripe** | 2.9% + $0.30 fee — 36% erosion on a $5 reward. |
+| **PayPal** | Account freezes. Geographically restricted. |
+| **Bank Wire** | $15–$45 overhead. 3–5 day settlement delay. |
+| **Ethereum** | $15+ gas fees. Micro-rewards are economically dead. |
 
 ---
 
-## SECTION 3 - HOW IT WORKS
+## SECTION 3 - ECOSYSTEM GAP
+
+### Section Headline
+
+**"The Missing Layer Between GitHub and Stellar"**
+
+### Body
+
+Stellar already supports grants, hackathons, and ecosystem funding.
+
+What is still missing is reusable infrastructure for rewarding everyday contributions:
+
+* fixing bugs
+* improving documentation
+* maintaining SDKs
+* translating resources
+* supporting community tooling
+
+PullPay fills this gap by connecting GitHub contribution events directly to Soroban-based reward settlement.
+
+---
+
+## SECTION 4 - HOW IT WORKS
 
 ### Section Headline
 
@@ -70,11 +103,15 @@ Traditional payment rails fail for micro-rewards: Stripe charges $0.30 + 2.9% (d
 
 ---
 
-## SECTION 4 - WHY STELLAR
+## SECTION 5 - WHY STELLAR
 
 ### Section Headline
 
-**"Why Stellar Makes This Possible"**
+**"Why Stellar Makes Contributor Rewards Practical"**
+
+### Intro
+
+Contributor rewards are often small — sometimes only $5–10. Traditional payment rails make these rewards inefficient because fees can consume a significant portion of the payout. Stellar enables economically viable contributor rewards through:
 
 ### Body
 
@@ -88,7 +125,7 @@ Traditional payment rails fail for micro-rewards: Stripe charges $0.30 + 2.9% (d
 
 ---
 
-## SECTION 5 - ARCHITECTURE & SECURITY
+## SECTION 6 - ARCHITECTURE & SECURITY
 
 ### Section Headline
 
@@ -112,7 +149,7 @@ PullPay does **not** evaluate code quality, contribution value, or contributor i
 
 ---
 
-## SECTION 6 - USE CASES
+## SECTION 7 - USE CASES
 
 | Use Case | Example |
 |---|---|
@@ -123,19 +160,60 @@ PullPay does **not** evaluate code quality, contribution value, or contributor i
 
 ---
 
-## SECTION 7 - ECOSYSTEM IMPACT
+## SECTION 8 - ECOSYSTEM IMPACT
 
-**"On-Chain Developer Acquisition"**
+### Section Headline
 
-Every successfully claimed reward is a measurable adoption event:
-- **Funded Wallet:** Contributor creates/funds a Stellar wallet.
-- **USDC Transfer:** Real on-chain settlement activity.
-- **Contract Invocation:** Direct Soroban usage.
-- **Ecosystem Growth:** A GitHub developer practically exposed to the Stellar ecosystem.
+**"GitHub Is One of the Largest Developer Networks in the World"**
+
+### Body
+
+PullPay introduces Stellar through a workflow developers already understand. Instead of asking contributors to learn blockchain first, PullPay embeds Stellar directly into the contribution process.
+
+Every successful reward creates:
+
+* A funded Stellar wallet
+* A USDC transaction
+* A Soroban contract interaction
+* A developer exposed to the Stellar ecosystem
+
+PullPay turns contribution activity into measurable ecosystem activity.
 
 ---
 
-## SECTION 8 - DEVELOPER / COPYWRITER REFERENCE
+## SECTION 9 - WHY NOW
+
+### Section Headline
+
+**"Why Now"**
+
+### Body
+
+Stellar continues to invest in developer tooling, grants, hackathons, and ecosystem growth. As more projects launch on Stellar, contributor incentives become increasingly important.
+
+PullPay explores a reusable infrastructure layer that allows ecosystem projects to reward open-source work using the same programmable financial rails that power the broader Stellar network.
+
+---
+
+## SECTION 10 - FAQ
+
+Priority order:
+1. Why not just use GitHub Sponsors?
+2. Does PullPay hold my funds?
+3. What does PullPay validate?
+4. How does the validation layer work?
+5. What happens if a PR is never merged?
+6. What if I accidentally merge a bad PR?
+7. Do I need Freighter to use PullPay?
+8. Why Stellar instead of traditional payment rails?
+9. How do I convert USDC to local currency?
+10. Do I need a USDC trustline?
+11. Who pays the transaction fees?
+12. Is my wallet address public if I claim via GitHub?
+
+---
+
+## DEVELOPER / COPYWRITER REFERENCE
 
 ### Terminology - Strict Consistency Rules
 

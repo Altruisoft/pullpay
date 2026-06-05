@@ -6,8 +6,8 @@
 </script>
 
 <section id="how-it-works" class="border-crx-border-subtle bg-crx-page relative border-b">
-	<div class="mx-auto min-h-screen max-w-[1280px] px-6 py-20 lg:px-10">
-		<div class="grid min-h-[calc(100vh-10rem)] gap-14 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
+	<div class="mx-auto min-h-screen max-w-[1140px] px-6 py-20 lg:px-10">
+		<div class="grid min-h-[calc(100vh-10rem)] gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
 			<div class="space-y-7" use:reveal={{ y: 24 }}>
 				<h2
 					class="text-crx-black max-w-[9ch] text-[clamp(3.4rem,6vw,6.8rem)] leading-[0.9] font-medium tracking-[-0.07em]"

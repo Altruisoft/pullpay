@@ -16,7 +16,7 @@
 		use:parallax={{ from: -18, to: 18 }}
 	></div>
 
-	<div class="relative mx-auto max-w-[1280px] px-6 py-12 lg:px-10 lg:py-16">
+	<div class="relative mx-auto max-w-[1140px] px-6 py-12 lg:px-10 lg:py-16">
 		<div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
 			<div class="footer-brand max-w-xl" use:reveal={{ y: 24 }}>
 				<a

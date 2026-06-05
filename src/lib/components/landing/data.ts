@@ -28,10 +28,11 @@ export const navLinks: LinkItem[] = [
 
 // ─── Problem Section ───
 export const problemData = {
-	title: 'Traditional Rails Bleed Open Source',
+	title: 'Why Small Contributions Rarely Get Rewarded',
 	paragraphs: [
-		'Today, rewarding a bug fix means DMing for an address on Discord, calculating fiat/crypto exchange rates, and sending manual transactions. The <strong class="text-crx-black font-semibold">15-minute administrative friction</strong> costs more than the micro-reward itself.',
-		'Stellar distributes massive top-down grants, but zero automated infrastructure exists for bottom-up micro-grants (<strong class="text-crx-black font-semibold">$5–$50</strong>). PullPay eliminates this friction by replacing manual payouts with Soroban-automated escrow.'
+		'Open-source ecosystems depend on hundreds of small contributions: bug fixes, documentation updates, translations, and developer tooling improvements. Yet rewarding these contributions is surprisingly difficult.',
+		'For a $5–20 reward, maintainers often coordinate payouts manually through Discord, spreadsheets, direct messages, and wallet collection. The <strong class="text-crx-black font-semibold">administrative overhead</strong> frequently exceeds the value of the reward itself.',
+		'As a result, many valuable contributions go unrewarded. PullPay automates the entire settlement process through GitHub workflows and Soroban escrow.'
 	]
 };
 
@@ -141,22 +142,22 @@ export const useCases: UseCase[] = [
 export const impactMetrics = [
 	{
 		value: 'Funded Wallet',
-		label: 'New ecosystem user',
+		label: 'A funded Stellar wallet',
 		description: 'Every contributor who claims a reward creates or funds a Stellar wallet.'
 	},
 	{
 		value: 'USDC Transfer',
-		label: 'On-chain activity',
+		label: 'A USDC transaction',
 		description: 'Each settlement is a real USDC transaction on the Stellar network.'
 	},
 	{
 		value: 'Contract Invocation',
-		label: 'Smart contract usage',
+		label: 'A Soroban contract interaction',
 		description: 'Every reward release is a Soroban contract interaction.'
 	},
 	{
-		value: 'Developer Onboarded',
-		label: 'Ecosystem growth',
+		value: 'Developer Exposed',
+		label: 'A developer exposed to Stellar',
 		description:
 			'For some contributors, this may become their first practical interaction with Stellar.'
 	}
@@ -165,19 +166,14 @@ export const impactMetrics = [
 // ─── FAQ ───
 export const faqItems: FaqItem[] = [
 	{
+		question: 'Why not just use GitHub Sponsors?',
+		answer:
+			'GitHub Sponsors is designed for subscriptions or donations to a person, not for paying out specific tasks. It also relies on traditional fiat rails (like Stripe), which have high geographic barriers and exclude many global developers. PullPay is task-based (pay-per-merge) and uses permissionless, global Stellar USDC.'
+	},
+	{
 		question: 'Does PullPay hold my funds?',
 		answer:
 			'No. USDC is locked inside a Soroban smart contract on Stellar Testnet. The validation worker only acts as an oracle to trigger the release upon a verified PR merge.'
-	},
-	{
-		question: 'What does PullPay validate?',
-		answer:
-			'PullPay validates only three things: repository association (the PR belongs to the correct repo), PR existence, and PR merged status. It does not evaluate code quality, contribution value, or contributor intent.'
-	},
-	{
-		question: 'How does the validation layer work?',
-		answer:
-			'A Cloudflare Worker performs a deterministic verification request against the official GitHub API to confirm the PR was merged. Settlement requests are authenticated via GitHub workflow executions.'
 	},
 	{
 		question: 'What happens if a PR is never merged?',
@@ -190,34 +186,29 @@ export const faqItems: FaqItem[] = [
 			'Maintainers can configure a 24-hour timelock instead of instant payouts. This provides a dispute window to cancel the settlement if the merged code contains fatal bugs or malicious changes.'
 	},
 	{
-		question: 'Do I need Freighter to use PullPay?',
-		answer:
-			'Yes. PullPay currently requires the Freighter browser extension to interact with the Stellar network and Soroban smart contracts.'
-	},
-	{
-		question: 'Why Stellar instead of traditional payment rails?',
-		answer:
-			'Stripe charges 2.9% + $0.30 per transaction, making a $5 micro-reward economically unviable (36% fee erosion). Stellar enables near-zero fee (<$0.01), instant, global settlement via USDC.'
-	},
-	{
-		question: 'How do I convert USDC to local currency?',
-		answer:
-			'USDC on Stellar can be converted to local currency through major exchanges that support Stellar USDC (such as Coinbase, Kraken, or Binance). You can also use on/off-ramp services that connect directly to local bank accounts.'
-	},
-	{
-		question: 'Do I need a USDC trustline?',
-		answer:
-			'Yes. To receive USDC on Stellar, your wallet must have a USDC trustline. PullPay guides you through adding one during the claim process — it takes a single transaction and costs less than $0.01.'
-	},
-	{
 		question: 'Who pays the transaction fees?',
 		answer:
-			'Transaction fees on Stellar are near-zero (<$0.01). The settlement transaction fee is covered by the PullPay protocol account so neither the maintainer nor the contributor needs to worry about gas costs.'
+			'Transaction fees on Stellar are near-zero (<$0.01). When creating a reward, the maintainer deposits a tiny fraction of XLM alongside the USDC to cover the automated settlement cost. There are zero hidden platform fees, and the contributor receives exactly the stated USDC amount.'
 	},
 	{
 		question: 'Is my wallet address public if I claim via GitHub?',
 		answer:
 			'Yes — claiming via a PR comment makes your Stellar address visible on the PR. If you prefer privacy, you can claim through the PullPay web interface instead, where your address is only shared with the smart contract.'
+	},
+	{
+		question: 'How do contributors know a reward is real and funded?',
+		answer:
+			'When a maintainer funds a reward, the USDC is locked transparently in a Soroban smart contract. PullPay automatically comments on the GitHub Issue with a link to the on-chain escrow, so contributors have cryptographic proof that the funds exist before they start working.'
+	},
+	{
+		question: 'What is PullPay’s cut or fee?',
+		answer:
+			'PullPay charges 0% fees. It is built as public ecosystem infrastructure funded by the Stellar Community Fund. 100% of the reward goes to the contributor, and the sub-cent network transaction fees are subsidized by the protocol.'
+	},
+	{
+		question: 'Does PullPay use the GitHub API?',
+		answer:
+			'Yes. While payouts are settled on blockchain, the validation relies on GitHub. Our Cloudflare Worker checks the official GitHub API to cryptographically verify that the specific PR was actually merged into the correct repository before releasing any funds.'
 	}
 ];
 

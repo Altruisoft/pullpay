@@ -13,7 +13,7 @@
 		></div>
 	</div>
 
-	<div class="relative mx-auto max-w-[1280px] px-6 py-24 lg:px-10">
+	<div class="relative mx-auto max-w-[1140px] px-6 py-24 lg:px-10">
 		<div
 			class="group border-crx-border-subtle shadow-crx-lg relative overflow-hidden rounded-[2.4rem] border bg-[#0FA8F1] transition-shadow duration-700 hover:shadow-[0_32px_100px_rgba(15,168,241,0.28)]"
 		>

@@ -6,7 +6,7 @@
 </script>
 
 <section id="use-cases" class="border-crx-border-subtle bg-crx-panel border-b">
-	<div class="mx-auto max-w-[1280px] px-6 py-20 lg:px-10 lg:py-28">
+	<div class="mx-auto max-w-[1140px] px-6 py-20 lg:px-10 lg:py-28">
 		<div class="mb-14 max-w-152 space-y-5" use:reveal={{ y: 24 }}>
 			<p class="text-crx-gray-500 text-sm font-medium tracking-[0.2em] uppercase">Use Cases</p>
 			<h2

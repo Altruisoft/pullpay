@@ -11,6 +11,8 @@
 	import UseCasesSection from '$lib/components/landing/UseCasesSection.svelte';
 	import WhyStellarSection from '$lib/components/landing/WhyStellarSection.svelte';
 	import ImpactSection from '$lib/components/landing/ImpactSection.svelte';
+	import EcosystemGapSection from '$lib/components/landing/EcosystemGapSection.svelte';
+	import WhyNowSection from '$lib/components/landing/WhyNowSection.svelte';
 	import {
 		assets,
 		faqItems,
@@ -73,6 +75,7 @@
 		paragraphs={problemData.paragraphs}
 		rails={traditionalRails}
 	/>
+	<EcosystemGapSection />
 	<HowItWorksSection steps={howItWorksSteps} />
 	<WhyStellarSection features={stellarFeatures} />
 	<StellarSorobanSection detailImage={assets.stellarSoroban} />
@@ -80,6 +83,7 @@
 	<ImpactSection metrics={impactMetrics} />
 	<UseCasesSection cases={useCases} />
 	<FaqSection items={faqItems} />
+	<WhyNowSection />
 	<CtaSection portraitImage={assets.automatePayout} />
 	<FooterSection logo={assets.logo} links={footerLinks} />
 </main>

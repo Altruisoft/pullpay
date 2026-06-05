@@ -56,7 +56,7 @@
 </script>
 
 <section id="stellar-soroban" class="border-crx-border-subtle bg-crx-panel relative border-b">
-	<div class="mx-auto min-h-screen max-w-[1280px] px-6 py-20 lg:px-10">
+	<div class="mx-auto min-h-screen max-w-[1140px] px-6 py-20 lg:px-10">
 		<div class="mb-14 max-w-2xl space-y-5" use:reveal={{ y: 24 }}>
 			<p class="text-crx-gray-500 text-sm font-medium tracking-[0.2em] uppercase">
 				Stellar & Soroban

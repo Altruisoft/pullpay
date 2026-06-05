@@ -6,8 +6,8 @@
 </script>
 
 <section id="architecture" class="border-crx-border-subtle bg-crx-page border-b">
-	<div class="mx-auto max-w-[1280px] px-6 py-20 lg:px-10 lg:py-28">
-		<div class="grid gap-14 lg:grid-cols-[0.45fr_0.55fr]">
+	<div class="mx-auto max-w-[1140px] px-6 py-20 lg:px-10 lg:py-28">
+		<div class="grid gap-10 lg:grid-cols-[0.45fr_0.55fr]">
 			<div class="space-y-5 lg:sticky lg:top-28 lg:self-start" use:reveal={{ y: 24 }}>
 				<p class="text-crx-gray-500 text-sm font-medium tracking-[0.2em] uppercase">Architecture</p>
 				<h2
