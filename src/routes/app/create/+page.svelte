@@ -226,7 +226,7 @@
 						{#each [['Repository', parsed.repo], ['Issue', `#${parsed.issueNumber}${issueTitle ? ` — ${issueTitle}` : ''}`], ['Amount', `${amountNum} USDC`], ['Deadline', `${form.deadlineDays} days`], ['Timelock', TIMELOCKS.find((t) => t.secs === form.timelockSecs)?.label ?? 'Off'], ['Network', 'Stellar Testnet']] as [label, value] (label)}
 							<div class="grid grid-cols-[7rem_1fr] gap-4 py-3.5">
 								<span class="font-medium text-crx-gray-500">{label}</span>
-								<span class="break-words text-crx-black">{value}</span>
+								<span class="wrap-break-word text-crx-black">{value}</span>
 							</div>
 						{/each}
 					</div>
@@ -238,7 +238,10 @@
 					{/if}
 
 					{#if trustlineOk === false && walletStore.address}
-						<TrustlineBanner address={walletStore.address} onresolved={() => (trustlineOk = true)} />
+						<TrustlineBanner
+							address={walletStore.address}
+							onresolved={() => (trustlineOk = true)}
+						/>
 					{/if}
 
 					{#if infoMsg}
