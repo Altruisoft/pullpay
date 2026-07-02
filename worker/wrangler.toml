@@ -16,4 +16,4 @@ OIDC_AUDIENCE = "pullpay"
 
 [[kv_namespaces]]
 binding = "REWARDS_KV"
-id = "" # create with `wrangler kv namespace create REWARDS_KV`
+id = "2d1fa104a1024faaadc85c377bcc4e44"

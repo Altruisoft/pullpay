@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Notify PullPay verifier
         env:
-          VERIFIER_URL: https://pullpay-verify.workers.dev/verify
+          VERIFIER_URL: https://pullpay-verify.irhamtria.workers.dev/verify
         run: |
           set -euo pipefail
           OIDC_TOKEN=$(curl -sSf \
