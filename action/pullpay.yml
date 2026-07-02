@@ -1,0 +1,46 @@
+# PullPay settlement trigger.
+# Copy this file to .github/workflows/pullpay.yml in your repository.
+# No secrets required: authentication uses GitHub Actions OIDC.
+name: PullPay settlement
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  id-token: write # OIDC token for verifier authentication
+  contents: read
+
+jobs:
+  settle:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify PullPay verifier
+        env:
+          VERIFIER_URL: https://pullpay-verify.workers.dev/verify
+        run: |
+          set -euo pipefail
+          OIDC_TOKEN=$(curl -sSf \
+            -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=pullpay" | jq -r '.value')
+
+          HTTP_CODE=$(curl -sS -o response.json -w "%{http_code}" \
+            -X POST "$VERIFIER_URL" \
+            -H "Authorization: Bearer $OIDC_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{\"repo\":\"${{ github.repository }}\",\"pr_number\":${{ github.event.pull_request.number }}}")
+
+          echo "Verifier response ($HTTP_CODE):"
+          cat response.json | jq .
+
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "✅ Reward settled on Stellar. Tx: $(jq -r '.settled[0].txHash' response.json)"
+          elif [ "$HTTP_CODE" = "409" ]; then
+            echo "ℹ️ No matching funded reward for this PR — nothing to settle."
+          else
+            echo "❌ Settlement failed — see message above. Common causes:"
+            echo "   • PR body missing 'closes #<issue>' reference"
+            echo "   • Contributor has not posted a 'pullpay:G...' claim marker"
+            exit 1
+          fi

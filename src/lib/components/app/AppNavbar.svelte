@@ -24,17 +24,28 @@
 				>
 					Dashboard
 				</a>
-				<a 
-					href="/app/create" 
+				<a
+					href="/app/create"
 					class="transition-colors hover:text-[#0FA8F1] {page.url.pathname.startsWith('/app/create') ? 'text-crx-black' : 'text-crx-gray-500'}"
 				>
 					Create Reward
+				</a>
+				<a
+					href="/app/claim"
+					class="transition-colors hover:text-[#0FA8F1] {page.url.pathname.startsWith('/app/claim') ? 'text-crx-black' : 'text-crx-gray-500'}"
+				>
+					Claim
 				</a>
 			</nav>
 		</div>
 
 		<div class="flex items-center gap-4">
+			<span class="rounded-full bg-crx-warning-soft px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-amber-700">
+				Testnet
+			</span>
 			<ConnectWallet />
 		</div>
 	</div>
 </header>
+
+<!-- Testnet badge per docs/UI-SPEC.md global rules -->

@@ -1,0 +1,19 @@
+name = "pullpay-verify"
+main = "src/index.ts"
+compatibility_date = "2025-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Secrets (set via `wrangler secret put`):
+#   ORACLE_SECRET  — Stellar secret key of the oracle account (release-only privilege)
+#   GITHUB_TOKEN   — optional; raises GitHub API rate limits
+
+[vars]
+NETWORK_PASSPHRASE = "Test SDF Network ; September 2015"
+SOROBAN_RPC_URL = "https://soroban-testnet.stellar.org"
+HORIZON_URL = "https://horizon-testnet.stellar.org"
+CONTRACT_ID = "CDIWXVQ3D4WVAPADNPOBMO65BKGHMUFPL6QGQZCUR64AXFOHGCF27AJQ" # from scripts/deploy.sh; mirrored in docs/DEPLOYMENTS.md
+OIDC_AUDIENCE = "pullpay"
+
+[[kv_namespaces]]
+binding = "REWARDS_KV"
+id = "" # create with `wrangler kv namespace create REWARDS_KV`

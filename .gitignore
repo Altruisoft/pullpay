@@ -21,3 +21,13 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# AI Agent
+*.md
+!README.md
+!Readme.md
+!readme.md
+.planning/
+.agents/
+.windsurfrules
+target/
